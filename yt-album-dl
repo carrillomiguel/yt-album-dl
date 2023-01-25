@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Check for dependencies
+if ! [ -x "$(command -v yt-dlp)" ]; then
+  echo 'Error: yt-dlp is not installed.' >&2
+  exit 1
+fi
+if ! [ -x "$(command -v id3v2)" ]; then
+  echo 'Error: id3v2 is not installed.' >&2
+  exit 1
+fi
+
+# Input album name and URL
+echo -n "Please enter a Youtube URL: "
+read album_url
+echo -n "Please enter the Album name: "
+read album_name
+echo -n "Please enter the Album Artist: "
+read album_artist
+
+# Make album directory
+album_name=${album_name// /_}
+mkdir $album_name
+cd $album_name
+yt-dlp -x --audio-format mp3 --add-metadata --embed-thumbnail -o "%(playlist_index)02d-%(title)s.%(ext)s" --restrict-filenames $album_url
+
+# Set the metadata for the album
+for file in *.mp3
+do
+  track_num=$(echo $file | cut -c1-2)
+  id3v2 -T "$track_num" "$file"
+  id3v2 --TPE2 "$album_artist" "$file"
+done
+
+# Final Message
+echo "Album successfully downloaded!"
