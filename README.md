@@ -25,4 +25,4 @@ $ ./yt-album-dl
 
 ## License
 
-Distributed under the GPLv3
+Distributed under the GNU General Public License v3.0.
