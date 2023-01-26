@@ -2,7 +2,7 @@
 
 ## Description
 
-YT Album Downloader is a script that downloads and tags albums from YT Music. Albums are downloaded and tagged as mp3s. The script will include tags for Title, Artist, Album Artist, Album, Year, and Track Number. It will also embed album artwork. Filenames are formatted as 01-Track_Name.mp3. This script is good for quickly digitizing and tagging a music collection.
+YT Album Downloader is a bash script that downloads and tags albums from YT Music. Albums are downloaded and tagged as mp3s. The script will include tags for Title, Artist, Album Artist, Album, Year, and Track Number. It will also embed album artwork. Filenames are formatted as 01-Track_Name.mp3. This script is good for quickly digitizing and tagging a music collection.
 
 ## Requirements
 
