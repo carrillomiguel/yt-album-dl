@@ -12,7 +12,7 @@ Requires the [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [id3v2](https://id3v
 
 Download the yt-album-dl bash script:
 
-    curl -LO https://raw.githubusercontent.com/carrillomiguel/yt-album-dl/main/yt-album-dl
+    $ curl -LO https://raw.githubusercontent.com/carrillomiguel/yt-album-dl/main/yt-album-dl
 
 Run the following command to make it executable:
 
