@@ -13,15 +13,15 @@ Requires yt-dlp and id3v2 to be installed
 
 Download the yt-album-dl bash script and run 
 
-$ chmod +x yt-album-dl 
+    $ chmod +x yt-album-dl 
 
 to make it executable
 
-# Usage
+## Usage
 
 Run 
 
-$ ./yt-album-dl
+    $ ./yt-album-dl
 
 ## License
 
