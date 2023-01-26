@@ -10,7 +10,11 @@ Requires the [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [id3v2](https://id3v
 
 ## Installation
 
-Download the yt-album-dl bash script and run the following command to make it executable:
+Download the yt-album-dl bash script:
+
+    curl -LO https://raw.githubusercontent.com/carrillomiguel/yt-album-dl/main/yt-album-dl
+
+Run the following command to make it executable:
 
     $ chmod +x yt-album-dl 
 
