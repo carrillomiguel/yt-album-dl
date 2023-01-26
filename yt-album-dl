@@ -17,19 +17,24 @@ echo -n "Please enter the Album name: "
 read album_name
 echo -n "Please enter the Album Artist: "
 read album_artist
+echo -n "Please enter the Year: "
+read album_year
 
 # Make album directory
 album_name=${album_name// /_}
 mkdir $album_name
 cd $album_name
+
+# Download the album
 yt-dlp -x --audio-format mp3 --add-metadata --embed-thumbnail -o "%(playlist_index)02d-%(title)s.%(ext)s" --restrict-filenames $album_url
 
 # Set the metadata for the album
 for file in *.mp3
 do
   track_num=$(echo $file | cut -c1-2)
-  id3v2 -T "$track_num" "$file"
+  id3v2 -T "$track_num/$total_tracks" "$file"
   id3v2 --TPE2 "$album_artist" "$file"
+  id3v2 -y "$album_year" "$file"
 done
 
 # Final Message
