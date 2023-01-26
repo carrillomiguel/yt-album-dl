@@ -32,7 +32,7 @@ yt-dlp -x --audio-format mp3 --add-metadata --embed-thumbnail -o "%(playlist_ind
 for file in *.mp3
 do
   track_num=$(echo $file | cut -c1-2)
-  id3v2 -T "$track_num/$total_tracks" "$file"
+  id3v2 -T "$track_num" "$file"
   id3v2 --TPE2 "$album_artist" "$file"
   id3v2 -y "$album_year" "$file"
 done
