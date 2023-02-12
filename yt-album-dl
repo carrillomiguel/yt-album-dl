@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# Check for dependencies
-if ! [ -x "$(command -v yt-dlp)" ]; then
-  echo 'Error: yt-dlp is not installed.' >&2
-  exit 1
-fi
-if ! [ -x "$(command -v id3v2)" ]; then
-  echo 'Error: id3v2 is not installed.' >&2
-  exit 1
-fi
-
 # Input album name and URL
 echo -n "Please enter a Youtube URL: "
 read album_url
@@ -26,7 +16,7 @@ mkdir $album_name
 cd $album_name
 
 # Download the album
-yt-dlp -x --audio-format mp3 --add-metadata --embed-thumbnail -o "%(playlist_index)02d-%(title)s.%(ext)s" --restrict-filenames $album_url
+yt-dlp -x --audio-format mp3 --audio-quality 320K --add-metadata --embed-thumbnail -o "%(playlist_index)02d-%(title)s.%(ext)s" --restrict-filenames $album_url
 
 # Set the metadata for the album
 for file in *.mp3
